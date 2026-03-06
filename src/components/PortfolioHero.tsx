@@ -990,19 +990,19 @@ const style = `
 `;
 
 export default function PortfolioHero() {
-  const cursorDot = useRef(null);
-  const cursorRing = useRef(null);
-  const [activeSection, setActiveSection] = useState("hero");
-  const [showModal, setShowModal] = useState(false);
+  const cursorDot = useRef<HTMLDivElement>(null);
+  const cursorRing = useRef<HTMLDivElement>(null);
+  const [activeSection, setActiveSection] = useState<string>("hero");
+  const [showModal, setShowModal] = useState<boolean>(false);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-  const [formStatus, setFormStatus] = useState(null); // null | "sending" | "success" | "error"
+  const [formStatus, setFormStatus] = useState<"sending" | "success" | "error-fields" | null>(null);
 
-  const handleFormChange = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
   const handleFormSubmit = () => {
     const { name, email, subject, message } = form;
     if (!name || !email || !message) { setFormStatus("error-fields"); return; }
-    // Build mailto link and open it
     const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
     const mailto = `mailto:mutimutujehope90@gmail.com?subject=${encodeURIComponent(subject || "Portfolio Contact")}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
@@ -1011,7 +1011,7 @@ export default function PortfolioHero() {
   };
 
   useEffect(() => {
-    const move = (e) => {
+    const move = (e: MouseEvent) => {
       if (cursorDot.current) {
         cursorDot.current.style.left = e.clientX + "px";
         cursorDot.current.style.top = e.clientY + "px";
@@ -1028,21 +1028,21 @@ export default function PortfolioHero() {
   useEffect(() => {
     const sections = ["hero", "projects", "about", "skills", "contact"];
     const observer = new IntersectionObserver(
-      (entries) => {
+      (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
       { threshold: 0.4 }
     );
-    sections.forEach((id) => {
+    sections.forEach((id: string) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
   }, []);
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
@@ -1271,7 +1271,7 @@ export default function PortfolioHero() {
 
         {/* MESSAGE MODAL */}
         {showModal && (
-          <div className="modal-overlay" onClick={(e) => { if (e.target.classList.contains("modal-overlay")) setShowModal(false); }}>
+          <div className="modal-overlay" onClick={(e: React.MouseEvent<HTMLDivElement>) => { if ((e.target as HTMLElement).classList.contains("modal-overlay")) setShowModal(false); }}>
             <div className="modal">
               <button className="modal-close" onClick={() => { setShowModal(false); setFormStatus(null); }}>✕</button>
               <h3 className="modal-title">Send a Message</h3>
