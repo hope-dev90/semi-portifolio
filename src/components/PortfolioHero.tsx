@@ -32,7 +32,6 @@ const style = `
     position: relative;
   }
 
-  /* Subtle geometric background */
   .portfolio-root::before {
     content: '';
     position: absolute;
@@ -44,8 +43,8 @@ const style = `
     z-index: 0;
   }
 
-  /* K diamond shape */
-  .k-diamond {
+  /* MH diamond shape */
+  .mh-diamond {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -91,9 +90,7 @@ const style = `
     position: relative;
   }
 
-  .nav-logo span {
-    color: var(--gold);
-  }
+  .nav-logo span { color: var(--gold); }
 
   .nav-links {
     display: flex;
@@ -114,16 +111,12 @@ const style = `
   }
 
   .nav-links a:hover { color: var(--white); }
-  .nav-links a.active {
-    color: var(--gold);
-    position: relative;
-  }
+  .nav-links a.active { color: var(--gold); position: relative; }
   .nav-links a.active::after {
     content: '';
     position: absolute;
     bottom: -4px;
-    left: 0;
-    right: 0;
+    left: 0; right: 0;
     height: 1px;
     background: var(--gold);
   }
@@ -142,10 +135,7 @@ const style = `
     font-family: 'Montserrat', sans-serif;
   }
 
-  .nav-cta:hover {
-    background: var(--gold);
-    color: var(--black);
-  }
+  .nav-cta:hover { background: var(--gold); color: var(--black); }
 
   /* HERO */
   .hero {
@@ -171,10 +161,7 @@ const style = `
     animation: fadeUp 0.7s ease 0.4s forwards;
   }
 
-  .hero-title-wrap {
-    overflow: hidden;
-    margin-bottom: 0;
-  }
+  .hero-title-wrap { overflow: hidden; margin-bottom: 0; }
 
   .hero-title {
     font-family: 'Playfair Display', serif;
@@ -236,19 +223,7 @@ const style = `
     animation: bounce 2s ease-in-out 2s infinite;
   }
 
-  .scroll-arrow span {
-    display: block;
-    width: 1px;
-    height: 18px;
-    background: currentColor;
-    margin: 0 auto;
-  }
-
-  .scroll-arrow::after {
-    content: '↓';
-    font-size: 13px;
-    line-height: 1;
-  }
+  .scroll-arrow::after { content: '↓'; font-size: 13px; line-height: 1; }
 
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
@@ -265,7 +240,7 @@ const style = `
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Grain overlay */
+  /* Grain */
   .grain {
     position: fixed;
     inset: -50%;
@@ -279,41 +254,39 @@ const style = `
   }
 
   @keyframes grainShift {
-    0% { transform: translate(0, 0); }
-    20% { transform: translate(-3%, -4%); }
-    40% { transform: translate(2%, 3%); }
-    60% { transform: translate(-1%, 2%); }
-    80% { transform: translate(3%, -2%); }
-    100% { transform: translate(0, 0); }
+    0% { transform: translate(0,0); }
+    20% { transform: translate(-3%,-4%); }
+    40% { transform: translate(2%,3%); }
+    60% { transform: translate(-1%,2%); }
+    80% { transform: translate(3%,-2%); }
+    100% { transform: translate(0,0); }
   }
 
-  /* Cursor dot */
+  /* Cursor */
   .cursor-dot {
     position: fixed;
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--gold);
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     transition: transform 0.1s ease, opacity 0.3s ease;
     mix-blend-mode: screen;
   }
 
   .cursor-ring {
     position: fixed;
-    width: 32px;
-    height: 32px;
+    width: 32px; height: 32px;
     border-radius: 50%;
     border: 1px solid rgba(200,149,42,0.5);
     pointer-events: none;
     z-index: 9998;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     transition: transform 0.18s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
   }
 
-  /* Side line decorations */
+  /* Side lines */
   .side-line {
     position: absolute;
     top: 50%;
@@ -330,8 +303,7 @@ const style = `
   .side-line.right { right: 40px; }
 
   .side-line-bar {
-    width: 1px;
-    height: 80px;
+    width: 1px; height: 80px;
     background: linear-gradient(to bottom, transparent, rgba(200,149,42,0.4), transparent);
   }
 
@@ -343,7 +315,7 @@ const style = `
     writing-mode: vertical-lr;
   }
 
-  /* ── TICKER MARQUEE ── */
+  /* Ticker */
   .ticker {
     position: relative;
     z-index: 10;
@@ -358,7 +330,6 @@ const style = `
   .ticker-track {
     display: flex;
     align-items: center;
-    gap: 0;
     width: max-content;
     animation: marquee 28s linear infinite;
   }
@@ -366,7 +337,7 @@ const style = `
   .ticker-track:hover { animation-play-state: paused; }
 
   @keyframes marquee {
-    0%   { transform: translateX(0); }
+    0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
 
@@ -384,14 +355,20 @@ const style = `
   }
 
   .ticker-diamond {
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     background: var(--gold);
     transform: rotate(45deg);
     flex-shrink: 0;
   }
 
-  /* ── ABOUT SECTION ── */
+  /* Section divider */
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(200,149,42,0.25), transparent);
+  }
+
+  /* About */
   .about {
     position: relative;
     z-index: 5;
@@ -404,52 +381,29 @@ const style = `
     margin: 0 auto;
   }
 
-  .about-left {}
-
   .about-eyebrow {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 28px;
   }
 
   .about-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(40px, 5vw, 68px);
-    font-weight: 900;
-    line-height: 1.05;
-    color: var(--white);
+    font-weight: 900; line-height: 1.05; color: var(--white);
   }
 
-  .about-title em {
-    font-style: italic;
-    font-weight: 700;
-    color: var(--gold-light);
-  }
-
-  .about-right {}
+  .about-title em { font-style: italic; font-weight: 700; color: var(--gold-light); }
 
   .about-body {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.8;
-    color: rgba(245,240,232,0.72);
-    margin-bottom: 24px;
+    font-size: 16px; font-weight: 300;
+    line-height: 1.8; color: rgba(245,240,232,0.72); margin-bottom: 24px;
   }
 
-  .about-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 40px;
-  }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
 
   .about-tag {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
     color: rgba(245,240,232,0.7);
     border: 1px solid rgba(245,240,232,0.18);
     padding: 9px 18px;
@@ -457,71 +411,41 @@ const style = `
     cursor: default;
   }
 
-  .about-tag:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-  }
+  .about-tag:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* Divider line */
-  .section-divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(200,149,42,0.25), transparent);
-  }
-
-  /* ── SKILLS SECTION ── */
+  /* Skills */
   .skills {
-    position: relative;
-    z-index: 5;
-    padding: 100px 80px;
-    max-width: 1400px;
-    margin: 0 auto;
+    position: relative; z-index: 5;
+    padding: 100px 80px; max-width: 1400px; margin: 0 auto;
   }
 
-  .skills-header {
-    margin-bottom: 64px;
-  }
+  .skills-header { margin-bottom: 64px; }
 
   .skills-eyebrow {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
   }
 
   .skills-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(48px, 6vw, 80px);
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1;
+    font-weight: 900; color: var(--white); line-height: 1;
   }
 
-  .skills-list {
-    list-style: none;
-  }
+  .skills-list { list-style: none; }
 
   .skill-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
     padding: 28px 0 20px;
     border-bottom: 1px solid rgba(245,240,232,0.1);
-    cursor: default;
-    position: relative;
-    overflow: hidden;
+    cursor: default; position: relative; overflow: hidden;
     transition: padding-left 0.3s ease;
   }
 
   .skill-row::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    height: 1px;
-    width: 0%;
+    content: ''; position: absolute;
+    bottom: -1px; left: 0; height: 1px; width: 0%;
     background: var(--gold);
     transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -529,322 +453,204 @@ const style = `
   .skill-row:hover::after { width: 85%; }
   .skill-row:hover { padding-left: 12px; }
 
-  .skill-left {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-  }
+  .skill-left { display: flex; align-items: center; gap: 28px; }
 
   .skill-num {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    color: rgba(200,149,42,0.6);
-    min-width: 24px;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    color: rgba(200,149,42,0.6); min-width: 24px;
   }
 
   .skill-name {
     font-family: 'Playfair Display', serif;
     font-size: clamp(22px, 2.8vw, 32px);
-    font-weight: 700;
-    color: var(--white);
+    font-weight: 700; color: var(--white);
     transition: color 0.25s ease;
   }
 
-  .skill-row:hover .skill-name { color: var(--white); }
-
   .skill-tools {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    color: rgba(245,240,232,0.35);
-    transition: color 0.25s ease;
+    font-size: 12px; font-weight: 400; letter-spacing: 0.06em;
+    color: rgba(245,240,232,0.35); transition: color 0.25s ease;
   }
 
   .skill-row:hover .skill-tools { color: rgba(245,240,232,0.6); }
 
-  .project-img-hover-label {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    z-index: 2;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--white);
-    background: rgba(200,149,42,0.85);
-    padding: 7px 14px;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .project-card:hover .project-img-hover-label {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── PROJECTS SECTION ── */
+  /* Projects */
   .projects {
-    position: relative;
-    z-index: 5;
-    padding: 100px 80px;
-    max-width: 1400px;
-    margin: 0 auto;
+    position: relative; z-index: 5;
+    padding: 100px 80px; max-width: 1400px; margin: 0 auto;
   }
 
-  .projects-header {
-    margin-bottom: 56px;
-  }
+  .projects-header { margin-bottom: 56px; }
 
   .projects-eyebrow {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
   }
 
   .projects-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(48px, 6vw, 80px);
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1;
+    font-weight: 900; color: var(--white); line-height: 1;
   }
 
   .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
   }
 
   .project-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    display: block; text-decoration: none;
+    color: inherit; cursor: pointer;
+    position: relative; overflow: hidden;
   }
 
   .project-img-wrap {
-    width: 100%;
-    aspect-ratio: 16/10;
-    overflow: hidden;
-    position: relative;
-    background: #1a1a16;
+    width: 100%; aspect-ratio: 16/10;
+    overflow: hidden; position: relative; background: #1a1a16;
   }
 
   .project-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s ease;
     filter: brightness(0.88) saturate(0.85);
   }
 
   .project-card:hover .project-img-wrap img {
-    transform: scale(1.05);
-    filter: brightness(1) saturate(1);
+    transform: scale(1.05); filter: brightness(1) saturate(1);
   }
 
   .project-img-overlay {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(10,10,8,0.5) 0%, transparent 60%);
     z-index: 1;
   }
 
   .project-arrow {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    z-index: 2;
-    width: 40px;
-    height: 40px;
-    background: rgba(200,149,42,0.0);
-    border: 1px solid rgba(200,149,42,0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    color: var(--gold);
-    opacity: 0;
-    transform: translate(6px, -6px);
+    position: absolute; top: 16px; right: 16px; z-index: 2;
+    width: 40px; height: 40px;
+    background: rgba(200,149,42,0); border: 1px solid rgba(200,149,42,0);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: var(--gold);
+    opacity: 0; transform: translate(6px,-6px);
     transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
   }
 
   .project-card:hover .project-arrow {
-    opacity: 1;
-    transform: translate(0, 0);
-    background: rgba(200,149,42,0.15);
-    border-color: rgba(200,149,42,0.5);
+    opacity: 1; transform: translate(0,0);
+    background: rgba(200,149,42,0.15); border-color: rgba(200,149,42,0.5);
   }
 
-  .project-meta {
-    padding: 20px 0 0;
+  .project-img-hover-label {
+    position: absolute; bottom: 16px; left: 16px; z-index: 2;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--white);
+    background: rgba(200,149,42,0.85); padding: 7px 14px;
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
+
+  .project-card:hover .project-img-hover-label { opacity: 1; transform: translateY(0); }
+
+  .project-meta { padding: 20px 0 0; }
 
   .project-meta-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 10px;
   }
 
   .project-tag {
-    font-size: 9.5px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
+    font-size: 9.5px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
   }
 
   .project-year {
-    font-size: 11px;
-    font-weight: 400;
-    color: rgba(245,240,232,0.35);
-    letter-spacing: 0.05em;
+    font-size: 11px; font-weight: 400;
+    color: rgba(245,240,232,0.35); letter-spacing: 0.05em;
   }
 
   .project-name {
     font-family: 'Playfair Display', serif;
     font-size: clamp(24px, 2.5vw, 34px);
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.1;
+    font-weight: 700; color: var(--white); line-height: 1.1;
     transition: color 0.25s ease;
   }
 
   .project-card:hover .project-name { color: var(--gold-light); }
 
   .project-desc {
-    font-size: 13px;
-    font-weight: 300;
-    color: rgba(245,240,232,0.45);
-    margin-top: 8px;
-    line-height: 1.6;
+    font-size: 13px; font-weight: 300;
+    color: rgba(245,240,232,0.45); margin-top: 8px; line-height: 1.6;
   }
 
-  /* ── CONTACT SECTION ── */
+  /* Contact */
   .contact {
-    position: relative;
-    z-index: 5;
-    text-align: center;
+    position: relative; z-index: 5; text-align: center;
     padding: 120px 48px 100px;
     border-top: 1px solid rgba(245,240,232,0.07);
   }
 
   .contact-eyebrow {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 36px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 36px;
   }
 
   .contact-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(48px, 8vw, 110px);
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1.0;
-    margin-bottom: 36px;
+    font-weight: 900; color: var(--white); line-height: 1.0; margin-bottom: 36px;
   }
 
-  .contact-title em {
-    font-style: italic;
-    color: var(--gold-light);
-  }
+  .contact-title em { font-style: italic; color: var(--gold-light); }
 
   .contact-sub {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 16px; font-weight: 300;
     color: rgba(245,240,232,0.55);
-    max-width: 520px;
-    margin: 0 auto 56px;
-    line-height: 1.7;
+    max-width: 520px; margin: 0 auto 56px; line-height: 1.7;
   }
 
   .contact-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
+    display: flex; align-items: center;
+    justify-content: center; gap: 32px; flex-wrap: wrap;
   }
 
   .contact-btn-primary {
     font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1.5px solid var(--gold);
-    padding: 18px 48px;
-    background: transparent;
-    cursor: pointer;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+    border: 1.5px solid var(--gold); padding: 18px 48px;
+    background: transparent; cursor: pointer;
     transition: background 0.25s ease, color 0.25s ease;
-    text-decoration: none;
-    display: inline-block;
+    text-decoration: none; display: inline-block;
   }
 
-  .contact-btn-primary:hover {
-    background: var(--gold);
-    color: var(--black);
-  }
+  .contact-btn-primary:hover { background: var(--gold); color: var(--black); }
 
   .contact-btn-ghost {
     font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.5);
-    background: none;
-    border: none;
-    cursor: pointer;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: rgba(245,240,232,0.5);
+    background: none; border: none; cursor: pointer;
     transition: color 0.25s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
+    display: flex; align-items: center; gap: 8px; text-decoration: none;
   }
 
   .contact-btn-ghost:hover { color: var(--white); }
 
-  /* ── CONTACT FORM MODAL ── */
+  /* Modal */
   .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(6px);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(6px);
+    z-index: 1000; display: flex; align-items: center;
+    justify-content: center; padding: 24px;
     animation: fadeIn 0.25s ease;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
   .modal {
-    background: #111109;
-    border: 1px solid rgba(200,149,42,0.2);
-    width: 100%;
-    max-width: 560px;
-    padding: 48px;
-    position: relative;
+    background: #111109; border: 1px solid rgba(200,149,42,0.2);
+    width: 100%; max-width: 560px; padding: 48px; position: relative;
     animation: slideUp2 0.35s cubic-bezier(0.16,1,0.3,1);
   }
 
@@ -854,139 +660,80 @@ const style = `
   }
 
   .modal-close {
-    position: absolute;
-    top: 18px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: rgba(245,240,232,0.4);
-    font-size: 22px;
-    cursor: pointer;
-    line-height: 1;
-    transition: color 0.2s;
+    position: absolute; top: 18px; right: 20px;
+    background: none; border: none;
+    color: rgba(245,240,232,0.4); font-size: 22px;
+    cursor: pointer; line-height: 1; transition: color 0.2s;
     font-family: 'Montserrat', sans-serif;
   }
   .modal-close:hover { color: var(--white); }
 
   .modal-title {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--white);
-    margin-bottom: 6px;
+    font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 6px;
   }
 
   .modal-sub {
-    font-size: 12px;
-    color: rgba(245,240,232,0.4);
-    margin-bottom: 36px;
-    letter-spacing: 0.04em;
+    font-size: 12px; color: rgba(245,240,232,0.4);
+    margin-bottom: 36px; letter-spacing: 0.04em;
   }
 
-  .form-group {
-    margin-bottom: 20px;
-  }
+  .form-group { margin-bottom: 20px; }
 
   .form-label {
-    display: block;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.5);
-    margin-bottom: 8px;
+    display: block; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,240,232,0.5); margin-bottom: 8px;
   }
 
   .form-input, .form-textarea {
-    width: 100%;
-    background: rgba(255,255,255,0.04);
+    width: 100%; background: rgba(255,255,255,0.04);
     border: 1px solid rgba(245,240,232,0.12);
-    color: var(--white);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    padding: 14px 16px;
-    outline: none;
-    transition: border-color 0.25s;
-    resize: none;
+    color: var(--white); font-family: 'Montserrat', sans-serif;
+    font-size: 14px; font-weight: 300; padding: 14px 16px;
+    outline: none; transition: border-color 0.25s; resize: none;
   }
 
-  .form-input:focus, .form-textarea:focus {
-    border-color: var(--gold);
-  }
-
-  .form-input::placeholder, .form-textarea::placeholder {
-    color: rgba(245,240,232,0.2);
-  }
-
+  .form-input:focus, .form-textarea:focus { border-color: var(--gold); }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(245,240,232,0.2); }
   .form-textarea { height: 120px; }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
   .form-submit {
-    width: 100%;
-    margin-top: 8px;
+    width: 100%; margin-top: 8px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--black);
-    background: var(--gold);
-    border: none;
-    padding: 18px;
-    cursor: pointer;
-    transition: background 0.25s, opacity 0.25s;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--black);
+    background: var(--gold); border: none; padding: 18px;
+    cursor: pointer; transition: background 0.25s, opacity 0.25s;
   }
 
   .form-submit:hover { background: var(--gold-light); }
   .form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 
-  .form-status {
-    margin-top: 14px;
-    font-size: 12px;
-    text-align: center;
-    letter-spacing: 0.05em;
-  }
+  .form-status { margin-top: 14px; font-size: 12px; text-align: center; letter-spacing: 0.05em; }
   .form-status.success { color: #6fcf97; }
   .form-status.error   { color: #eb5757; }
 
-
-  /* ── FOOTER ── */
+  /* Footer */
   .footer {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 48px;
-    padding: 32px 48px;
+    position: relative; z-index: 5;
+    display: flex; align-items: center; justify-content: center;
+    gap: 48px; padding: 32px 48px;
     border-top: 1px solid rgba(245,240,232,0.07);
-    background: rgba(0,0,0,0.3);
-    flex-wrap: wrap;
+    background: rgba(0,0,0,0.3); flex-wrap: wrap;
   }
 
   .footer-link {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.35);
-    text-decoration: none;
-    transition: color 0.25s ease;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(245,240,232,0.35);
+    text-decoration: none; transition: color 0.25s ease;
   }
 
   .footer-link:hover { color: var(--gold); }
 
-  .footer-sep {
-    width: 1px;
-    height: 14px;
-    background: rgba(245,240,232,0.12);
-  }
+  .footer-sep { width: 1px; height: 14px; background: rgba(245,240,232,0.12); }
 `;
 
 export default function PortfolioHero() {
@@ -1004,38 +751,56 @@ export default function PortfolioHero() {
     const { name, email, subject, message } = form;
     if (!name || !email || !message) { setFormStatus("error-fields"); return; }
     const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-    const mailto = `mailto:mutimutujehope90@gmail.com?subject=${encodeURIComponent(subject || "Portfolio Contact")}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:mutimutujehope90@gmail.com?subject=${encodeURIComponent(subject || "MH. Portfolio Contact")}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
     setFormStatus("success");
-    setTimeout(() => { setShowModal(false); setFormStatus(null); setForm({ name:"", email:"", subject:"", message:"" }); }, 2500);
+    setTimeout(() => {
+      setShowModal(false);
+      setFormStatus(null);
+      setForm({ name: "", email: "", subject: "", message: "" });
+    }, 2500);
   };
 
+  // Favicon + title
+  useEffect(() => {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="%230a0a08"/><text x="2" y="24" font-family="Georgia,serif" font-weight="900" font-size="16" fill="%23f5f0e8">MH</text><circle cx="28" cy="22" r="3" fill="%23c8952a"/></svg>`;
+    let link = document.querySelector<HTMLLinkElement>("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+    link.type = "image/svg+xml";
+    link.href = `data:image/svg+xml,${svg}`;
+    document.title = "MH. — Creative Developer";
+  }, []);
+
+  // Cursor
   useEffect(() => {
     const move = (e: MouseEvent) => {
       if (cursorDot.current) {
         cursorDot.current.style.left = e.clientX + "px";
-        cursorDot.current.style.top = e.clientY + "px";
+        cursorDot.current.style.top  = e.clientY + "px";
       }
       if (cursorRing.current) {
         cursorRing.current.style.left = e.clientX + "px";
-        cursorRing.current.style.top = e.clientY + "px";
+        cursorRing.current.style.top  = e.clientY + "px";
       }
     };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
+  // Scroll spy
   useEffect(() => {
-    const sections = ["hero", "projects", "about", "skills", "contact"];
+    const ids = ["hero", "projects", "about", "skills", "contact"];
     const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
+        entries.forEach(entry => { if (entry.isIntersecting) setActiveSection(entry.target.id); });
       },
       { threshold: 0.4 }
     );
-    sections.forEach((id: string) => {
+    ids.forEach((id: string) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -1050,17 +815,15 @@ export default function PortfolioHero() {
   return (
     <>
       <style>{style}</style>
-      <div className="portfolio-root" style={{width:"100%", minHeight:"100vh"}}>
+      <div className="portfolio-root" style={{ width: "100%", minHeight: "100vh" }}>
         <div className="grain" />
-        <div ref={cursorDot} className="cursor-dot" />
+        <div ref={cursorDot}  className="cursor-dot" />
         <div ref={cursorRing} className="cursor-ring" />
-
-        {/* Background diamond */}
-        <div className="k-diamond" />
+        <div className="mh-diamond" />
 
         {/* NAV */}
         <nav className="nav">
-          <div className="nav-logo" onClick={() => scrollTo("hero")} style={{cursor:"pointer"}}>K<span>.</span></div>
+          <div className="nav-logo" onClick={() => scrollTo("hero")}>MH<span>.</span></div>
           <ul className="nav-links">
             {[
               { label: "Work",    id: "projects" },
@@ -1072,7 +835,7 @@ export default function PortfolioHero() {
                 <a
                   href={`#${id}`}
                   className={activeSection === id ? "active" : ""}
-                  onClick={(e) => { e.preventDefault(); scrollTo(id); }}
+                  onClick={(e: React.MouseEvent) => { e.preventDefault(); scrollTo(id); }}
                 >
                   {label}
                 </a>
@@ -1084,10 +847,9 @@ export default function PortfolioHero() {
 
         {/* HERO */}
         <section id="hero" className="hero">
-          {/* Side decorations */}
           <div className="side-line left">
             <div className="side-line-bar" />
-            <span className="side-line-text">Portfolio</span>
+            <span className="side-line-text">MH Portfolio</span>
             <div className="side-line-bar" />
           </div>
           <div className="side-line right">
@@ -1095,17 +857,11 @@ export default function PortfolioHero() {
             <span className="side-line-text">2025</span>
             <div className="side-line-bar" />
           </div>
-
           <p className="hero-eyebrow">Creative Developer</p>
-
           <div className="hero-title-wrap">
             <span className="hero-title">CRAFTING</span>
           </div>
-
-          <p className="hero-subtitle">
-            I build&nbsp;&nbsp;<em>Digital Experiences</em>
-          </p>
-
+          <p className="hero-subtitle">I build&nbsp;&nbsp;<em>Digital Experiences</em></p>
           <div className="hero-scroll">
             Scroll to explore &nbsp;
             <div className="scroll-arrow" />
@@ -1114,15 +870,14 @@ export default function PortfolioHero() {
 
         {/* TICKER */}
         {(() => {
-          const items = ["UX Design", "Web Development", "Motion Design", "Brand Identity", "Creative Development", "3D & WebGL", "Interactive UI", "Frontend Architecture"];
+          const items = ["UX Design","Web Development","Motion Design","Brand Identity","Creative Development","3D & WebGL","Interactive UI","Frontend Architecture"];
           const doubled = [...items, ...items];
           return (
             <div className="ticker">
               <div className="ticker-track">
                 {doubled.map((item, i) => (
                   <div className="ticker-item" key={i}>
-                    <span className="ticker-diamond" />
-                    {item}
+                    <span className="ticker-diamond" />{item}
                   </div>
                 ))}
               </div>
@@ -1130,7 +885,7 @@ export default function PortfolioHero() {
           );
         })()}
 
-        <div className="section-divider" style={{marginTop: "0"}} />
+        <div className="section-divider" style={{ marginTop: "0" }} />
 
         {/* PROJECTS */}
         <section id="projects" className="projects">
@@ -1140,38 +895,10 @@ export default function PortfolioHero() {
           </div>
           <div className="projects-grid">
             {[
-              {
-                name: "Her-Access",
-                tag: "Women Empowerment",
-                year: "2025",
-                desc: "A platform bridging the digital divide for women in underserved communities.",
-                img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=85",
-                url: "https://github.com/hope-dev90/her-access",
-              },
-              {
-                name: "UbutaberaHub",
-                tag: "Community Platform",
-                year: "2025",
-                desc: "A collaborative hub connecting local communities through shared resources.",
-                img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&q=85",
-                url: "https://github.com/hope-dev90/ubutaberahub",
-              },
-              {
-                name: "Her-Legacy",
-                tag: "Social Impact",
-                year: "2025",
-                desc: "Preserving and celebrating the stories and achievements of women leaders.",
-                img: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&q=85",
-                url: "https://github.com/hope-dev90/her-legacy",
-              },
-              {
-                name: "Personal Agenda",
-                tag: "Productivity",
-                year: "2025",
-                desc: "A smart personal planning tool with AI-powered scheduling and task management.",
-                img: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=900&q=85",
-                url: "https://github.com/hope-dev90/personal-agenda",
-              },
+              { name: "Her-Access",     tag: "Women Empowerment", year: "2025", desc: "A platform bridging the digital divide for women in underserved communities.",         img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=85", url: "https://github.com/hope-dev90/her-access"      },
+              { name: "UbutaberaHub",   tag: "Community Platform", year: "2025", desc: "A collaborative hub connecting local communities through shared resources.",           img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&q=85", url: "https://github.com/hope-dev90/ubutaberahub"   },
+              { name: "Her-Legacy",     tag: "Social Impact",      year: "2025", desc: "Preserving and celebrating the stories and achievements of women leaders.",            img: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&q=85", url: "https://github.com/hope-dev90/her-legacy"     },
+              { name: "Personal Agenda",tag: "Productivity",       year: "2025", desc: "A smart personal planning tool with AI-powered scheduling and task management.",      img: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=900&q=85", url: "https://github.com/hope-dev90/personal-agenda" },
             ].map(({ name, tag, year, desc, img, url }) => (
               <a className="project-card" key={name} href={url} target="_blank" rel="noreferrer">
                 <div className="project-img-wrap">
@@ -1199,20 +926,13 @@ export default function PortfolioHero() {
         <section id="about" className="about">
           <div className="about-left">
             <p className="about-eyebrow">About</p>
-            <h2 className="about-title">
-              Building the<br />
-              <em>future</em> of web
-            </h2>
+            <h2 className="about-title">Building the<br /><em>future</em> of web</h2>
           </div>
           <div className="about-right">
-            <p className="about-body">
-              I'm a creative developer passionate about building exceptional digital experiences that push the boundaries of what's possible on the web.
-            </p>
-            <p className="about-body">
-              My approach combines Swiss design principles with cutting-edge technology to create work that's both beautiful and performant.
-            </p>
+            <p className="about-body">I'm a creative developer passionate about building exceptional digital experiences that push the boundaries of what's possible on the web.</p>
+            <p className="about-body">My approach combines Swiss design principles with cutting-edge technology to create work that's both beautiful and performant.</p>
             <div className="about-tags">
-              {["React", "Next.js", "TypeScript", "Three.js", "Framer Motion", "Tailwind CSS"].map(tag => (
+              {["React","Next.js","TypeScript","Three.js","Framer Motion","Tailwind CSS"].map(tag => (
                 <span className="about-tag" key={tag}>{tag}</span>
               ))}
             </div>
@@ -1229,10 +949,10 @@ export default function PortfolioHero() {
           </div>
           <ul className="skills-list">
             {[
-              { num: "01", name: "Frontend Development", tools: "React, Next.js, Vue" },
-              { num: "02", name: "UI/UX Design",         tools: "Figma, Framer, Adobe CC" },
-              { num: "03", name: "Motion & Animation",   tools: "GSAP, Framer Motion, Three.js" },
-              { num: "04", name: "Backend & APIs",       tools: "Node.js, Python, PostgreSQL" },
+              { num: "01", name: "Frontend Development", tools: "React, Next.js, Vue"              },
+              { num: "02", name: "UI/UX Design",         tools: "Figma, Framer, Adobe CC"          },
+              { num: "03", name: "Motion & Animation",   tools: "GSAP, Framer Motion, Three.js"    },
+              { num: "04", name: "Backend & APIs",       tools: "Node.js, Python, PostgreSQL"      },
               { num: "05", name: "Cybersecurity",        tools: "Pen Testing, OWASP, Network Security" },
               { num: "06", name: "Express & Server",     tools: "Express.js, REST APIs, Middleware" },
             ].map(({ num, name, tools }) => (
@@ -1252,13 +972,8 @@ export default function PortfolioHero() {
         {/* CONTACT */}
         <section id="contact" className="contact">
           <p className="contact-eyebrow">Get In Touch</p>
-          <h2 className="contact-title">
-            Let's create<br />
-            <em>something</em> great
-          </h2>
-          <p className="contact-sub">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-          </p>
+          <h2 className="contact-title">Let's create<br /><em>something</em> great</h2>
+          <p className="contact-sub">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
           <div className="contact-actions">
             <button className="contact-btn-primary" onClick={() => setShowModal(true)}>
               Send A Message
@@ -1271,12 +986,16 @@ export default function PortfolioHero() {
 
         {/* MESSAGE MODAL */}
         {showModal && (
-          <div className="modal-overlay" onClick={(e: React.MouseEvent<HTMLDivElement>) => { if ((e.target as HTMLElement).classList.contains("modal-overlay")) setShowModal(false); }}>
+          <div
+            className="modal-overlay"
+            onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+              if ((e.target as HTMLElement).classList.contains("modal-overlay")) setShowModal(false);
+            }}
+          >
             <div className="modal">
               <button className="modal-close" onClick={() => { setShowModal(false); setFormStatus(null); }}>✕</button>
               <h3 className="modal-title">Send a Message</h3>
               <p className="modal-sub">I'll get back to you at mutimutujehope90@gmail.com</p>
-
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">Your Name</label>
@@ -1287,27 +1006,19 @@ export default function PortfolioHero() {
                   <input className="form-input" name="email" type="email" value={form.email} onChange={handleFormChange} placeholder="john@email.com" />
                 </div>
               </div>
-
               <div className="form-group">
                 <label className="form-label">Subject</label>
                 <input className="form-input" name="subject" value={form.subject} onChange={handleFormChange} placeholder="Project idea, collaboration..." />
               </div>
-
               <div className="form-group">
                 <label className="form-label">Message</label>
                 <textarea className="form-textarea" name="message" value={form.message} onChange={handleFormChange} placeholder="Tell me about your project..." />
               </div>
-
               <button className="form-submit" onClick={handleFormSubmit} disabled={formStatus === "sending"}>
                 {formStatus === "sending" ? "Sending..." : "Send Message →"}
               </button>
-
-              {formStatus === "success" && (
-                <p className="form-status success">✓ Opening your email client — message ready to send!</p>
-              )}
-              {formStatus === "error-fields" && (
-                <p className="form-status error">Please fill in your name, email and message.</p>
-              )}
+              {formStatus === "success"      && <p className="form-status success">✓ Opening your email client — message ready to send!</p>}
+              {formStatus === "error-fields" && <p className="form-status error">Please fill in your name, email and message.</p>}
             </div>
           </div>
         )}
