@@ -2,7 +2,7 @@
 
 This is a minimal React + TypeScript template using [Vite](https://vite.dev/) with HMR, ESLint rules, and a modern frontend setup. It's optimized for fast development while giving you the flexibility to expand for production apps.
 
-You can see a working demo of a project using this setup here: [My Portfolio](https://semi-portifolio-now.vercel.app/)
+You can see a working demo of a project using this setup here: https://mutimutujehope.vercel.app/
 
 ---
 
